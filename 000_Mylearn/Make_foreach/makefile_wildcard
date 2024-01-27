@@ -1,0 +1,13 @@
+A = a b c d e
+B = $(foreach f,$(A),$(f).o) #将所有文件进行一个循环
+
+file2 = a.c b.c c.c d.c e.c  cnm
+file = $(wildcard *.c)       #找到其中存在的文件，去将文件名赋给这个变量
+file3 = $(wildcard $(file2)) #这里也可以将file2变量中存在的文件给到file3
+file4 = $(patsubst %.c,%.d,$(file2)) #$(patsubst pattern,replacement,$(var))这里是将var的安装pattern的模式，全部换成替换成replacement。
+
+all:
+	@echo $(B)
+	@echo $(file)
+	@echo $(file3)
+	@echo $(file4)

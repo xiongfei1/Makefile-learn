@@ -1,0 +1,5 @@
+A = a b c d e
+B = $(foreach f,$(A),$(f).o) #将所有文件进行一个循环
+
+all:
+	@echo $(B)

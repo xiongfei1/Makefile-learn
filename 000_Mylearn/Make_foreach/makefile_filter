@@ -1,0 +1,6 @@
+A = aaa.o bbbb.c asdasd.o asdawsa.m
+B = $(filter %.o,$(A)) #此函数就是取出符合这个格式的文件
+C = $(filter-out %.o,$(A))#此函数是除了.o文件的以外文件全部取出
+all:
+	@echo  $(B)
+	@echo  $(C)
